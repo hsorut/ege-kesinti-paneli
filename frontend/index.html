@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ege Kesinti | Enerji Takip Paneli</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+   
+</head>
+<body>
+
+    <div class="dashboard-wrapper">
+        
+        <header class="main-header">
+            <div class="logo">
+                <span class="logo-icon">⚡</span>
+                <h1>EGE KESİNTİ</h1>
+            </div>
+            <p class="tagline">Gerçek Zamanlı Enerji Analiz Platformu</p>
+        </header>
+
+        <section class="scorecards">
+            <div class="card">
+                <h3>Kritik Gün Sayısı</h3>
+                <p class="value" id="kritik-gun-sayisi">0</p>
+                <span class="subtext">Eşik değeri aşan günler</span>
+            </div>
+
+            <div class="card">
+                <h3>Maksimum Kesinti</h3>
+                <p class="value" id="max-kesinti">0 <small>Saat</small></p>
+                <span class="subtext">Bölgesel rekor süre</span>
+            </div>
+
+            <div class="card">
+                <h3>Sistem Durumu</h3>
+                <p class="value status-text">AKTİF</p>
+                <span class="subtext">Sensör bağlantısı hazır</span>
+            </div>
+        </section>
+
+        <main class="main-content">
+            
+            <aside class="control-panel">
+                <h2>Kontrol Merkezi</h2>
+                
+               <div class="input-group">
+    <label for="sehir-secimi">Şehir Seçin</label>
+    <select id="sehir-secimi" onchange="ilceleriGuncelle()">
+        <option value="">Şehir Seçiniz...</option>
+        <option value="izmir">İzmir</option>
+        <option value="manisa">Manisa</option>
+    </select>
+</div>
+
+<div class="input-group">
+    <label for="ilce-secimi">İlçe Seçin</label>
+    <select id="ilce-secimi" disabled>
+        <option value="">Önce Şehir Seçiniz...</option>
+    </select>
+</div>
+
+                <div class="input-group">
+                    <label for="esik-degeri">Kritik Eşik Değeri</label>
+                    <input type="number" id="esik-degeri" placeholder="Örn: 5 saat" min="0 saat">
+                </div>
+
+                <button id="update-btn" class="primary-btn">Ayarları Uygula</button>
+            </aside>
+
+            <section class="chart-container">
+                <div class="chart-header">
+                    <h2>Kesinti Veri Grafiği</h2>
+                    <span class="live-indicator">CANLI</span>
+                </div>
+                <div id="graph-placeholder">
+                    <p>Veri bekleniyor...</p>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="main-footer">
+            <p>&copy; 2026 Ege Kesinti Projesi | Sentinel Deep Tech Girişimi</p>
+        </footer>
+
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
