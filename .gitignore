@@ -1,0 +1,14 @@
+# Python Önbellek Dosyaları
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Sanal Ortamlar (Virtual Environments)
+venv/
+.venv/
+env/
+.env
+
+# İşletim Sistemi Dosyaları
+.DS_Store
+Thumbs.db
